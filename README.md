@@ -1,4 +1,4 @@
-# Vejle Kommune — AI Thesis Demo
+# Vejle Kommune — AI Demo
 
 Umbraco 17 project demonstrating 8 AI use cases in a municipal CMS context.
 Built as part of a graduation thesis at Limbo Works.

@@ -51,20 +51,24 @@ backend/
   code/     — Domain logic, AI providers, bootstrap, SEO
   web/      — Umbraco host, views, appsettings
 Docs/
-  adr/      — Architecture Decision Records (ADR-0001 through ADR-0011)
+  adr/      — Architecture Decision Records (ADR-0001 through ADR-0013)
 CLAUDE.md   — Claude Code agent instructions
 LIMBO_GUIDELINES.md — Limbo coding standards
 ```
 
 ## AI use cases
 
-| # | Feature | Status |
-|---|---------|--------|
-| 1 | Content generation | Planned |
-| 2 | SEO meta description | Planned |
-| 3 | Translation (da-DK → en-US) | Planned |
-| 4 | Image alt text | Planned |
-| 5 | Content moderation | Planned |
-| 6 | Semantic search | Planned |
-| 7 | Site chatbot | Planned |
-| 8 | Accessibility checker | Planned |
+| # | Feature | Pattern | Status |
+|---|---------|---------|--------|
+| 1 | Schema.org / JSON-LD enrichment | Schema enrichment | Done |
+| 2 | SEO meta description generation | Sync suggestion | Done |
+| 3 | Tone-of-voice gate | Gate / validator | Done |
+| 4 | Image alt text generation | Sync suggestion | Done |
+| 5 | Translation (da-DK → en-US) | Async transform | Done |
+| 6 | Accessibility audit | Async analyze | Done |
+| 7 | Document ingestion (PDF/DOCX → draft) | Generative pipeline | Done |
+| 8 | MCP agent tools | Agent tool | Done* |
+
+\* Core MCP tools (list/get/search/create content) work end-to-end. One known gap: the built-in Copilot sidebar can't write to nested Block List items yet — see [ADR-0013](Docs/adr/0013-copilot-block-list-write-gap.md).
+
+See [Testing-Guide.md](Docs/Testing-Guide.md) for step-by-step verification of each feature, including live endpoints.
